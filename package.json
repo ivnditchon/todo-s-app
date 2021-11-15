@@ -1,0 +1,25 @@
+{
+  "name": "todo-s-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-app": "tailwindcss build -i ./src/tailwindcss/style.css -o ./dist/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivnditchon/todo-s-app.git"
+  },
+  "keywords": [],
+  "author": "Ivan Ditchon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivnditchon/todo-s-app/issues"
+  },
+  "homepage": "https://github.com/ivnditchon/todo-s-app#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19"
+  }
+}
