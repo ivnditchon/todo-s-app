@@ -1,11 +1,12 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    content: ['./dist/**/*.{html, js}']
-  },
+  purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'primary': ["'Roboto', sans-serif"]
+      }
+    },
   },
   variants: {
     extend: {},

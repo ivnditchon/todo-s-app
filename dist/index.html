@@ -13,11 +13,43 @@
     <meta name="twitter:description" content="Your weekly and daily todo's list">
     <meta name="twitter:site" content="@mytodo's">
     <meta name="twitter:creator" content="@ivanditchon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/main.js" defer></script>
     <title>My Todo's</title>
 </head>
-<body>
-    
+<body class="font-primary">
+    <section class="flex flex-col justify-center items-center w-full min-h-screen px-5 bg-gray-100">
+        <h1 class="text-5xl text-gray-700 font-bold uppercase">my <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">todo's</span></h1>
+        <div class="w-full h-auto px-5 py-5 mt-14 bg-gray-200 rounded-md">
+            <div class="w-full h-auto">
+                <div class="flex justify-start items-center h-10 bg-gray-200">
+                    <input type="text" class="w-full h-full pl-2 text-sm bg-white text-gray-800 font-normal outline-none border rounded-l-md border-gray-300" placeholder="Write a new task">
+                    <button class="h-full px-2 rounded-r-md bg-gradient-to-r from-green-400 to-blue-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex items-center h-10 mt-5 px-2 border border-gray-300 rounded-md bg-white">
+                    <select name="" id="" class="w-full outline-none text-sm text-gray-800 font-normal">
+                        <option value="#">All</option>
+                        <option value="#">Completed</option>
+                        <option value="#">Uncompleted</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="mt-10 border border-green-500">
+                <ul>
+                    <li>
+                        <p>sadsadsad</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
