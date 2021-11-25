@@ -26,15 +26,15 @@
         <div class="w-full h-auto px-5 py-5 mt-14 bg-gray-200 rounded-md">
             <div class="w-full h-auto">
                 <div class="flex justify-start items-center h-10 bg-gray-200">
-                    <input type="text" class="w-full h-full pl-2 text-sm bg-white text-gray-800 font-normal outline-none border rounded-l-md border-gray-300" placeholder="Write a new task">
-                    <button class="h-full px-2 rounded-r-md bg-gradient-to-r from-green-400 to-blue-500">
+                    <input type="text" id="create_task" class="w-full h-full pl-2 text-sm bg-white text-gray-800 font-normal outline-none border rounded-l-md border-gray-300" placeholder="Write a new task">
+                    <button id="add_task" class="h-full px-2 rounded-r-md bg-gradient-to-r from-green-400 to-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                         </svg>
                     </button>
                 </div>
                 <div class="flex items-center h-10 mt-5 px-2 border border-gray-300 rounded-md bg-white">
-                    <select name="" id="" class="w-full outline-none text-sm text-gray-800 font-normal">
+                    <select name="" id="" class="w-full outline-none text-sm text-gray-800 font-normal bg-white">
                         <option value="#">All</option>
                         <option value="#">Completed</option>
                         <option value="#">Uncompleted</option>
@@ -63,31 +63,32 @@
                             </div>
                         </div>
                     </div>
-                    <ul class="mt-2">
+                    <ul id="task" class="mt-2">
                         <li class="flex items-center px-3 py-1 overflow-auto bg-white h-10 rounded-md">
                             <div class="flex items-center">
                                 <input type="checkbox" name="" id="" class="mr-3">
-                                <p class="overflow-auto text-gray-700 py-1 mr-2 font-normal antialiased">Big elbow Daeng Sai 4</p>
+                                <p class="overflow-auto text-sm text-gray-700 py-1 mr-2 font-normal antialiased">Big elbow Daeng Sai 4</p>
+                            </div>
+                        </li>
+                        <!-- 
+                        <li class="flex items-center px-3 py-1 mt-3 overflow-auto bg-white h-10 rounded-md">
+                            <div class="flex items-center">
+                                <input type="checkbox" name="" id="" class="mr-3">
+                                <p class="overflow-auto text-sm text-gray-700 py-1 mr-2 font-normal antialiased">Honda XRM Canister</p>
                             </div>
                         </li>
                         <li class="flex items-center px-3 py-1 mt-3 overflow-auto bg-white h-10 rounded-md">
                             <div class="flex items-center">
                                 <input type="checkbox" name="" id="" class="mr-3">
-                                <p class="overflow-auto text-gray-700 py-1 mr-2 font-normal antialiased">Honda XRM Canister</p>
+                                <p class="overflow-auto text-sm text-gray-700 py-1 mr-2 font-normal antialiased">Formula 8.1 caliper</p>
                             </div>
                         </li>
                         <li class="flex items-center px-3 py-1 mt-3 overflow-auto bg-white h-10 rounded-md">
                             <div class="flex items-center">
                                 <input type="checkbox" name="" id="" class="mr-3">
-                                <p class="overflow-auto text-gray-700 py-1 mr-2 font-normal antialiased">Formula 8.1 caliper</p>
+                                <p class="overflow-auto text-sm text-gray-700 py-1 mr-2 font-normal antialiased">Swing arm MTV</p>
                             </div>
-                        </li>
-                        <li class="flex items-center px-3 py-1 mt-3 overflow-auto bg-white h-10 rounded-md">
-                            <div class="flex items-center">
-                                <input type="checkbox" name="" id="" class="mr-3">
-                                <p class="overflow-auto text-gray-700 py-1 mr-2 font-normal antialiased">Swing arm MTV</p>
-                            </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
