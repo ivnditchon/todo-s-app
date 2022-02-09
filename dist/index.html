@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,84 +16,105 @@
     <meta name="twitter:creator" content="@ivanditchon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="./images/icon.png" type="image/icon">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/main.js" defer></script>
+    <script defer src="./js/app.js"></script>
     <title>My Todo's</title>
+    <meta name="description" content="A list of tasks that need to be completed, typically organized in order of priority.">
 </head>
-<body class="font-primary">
-    <section class="flex flex-col justify-center items-center w-full min-h-screen px-5 py-10 bg-gray-100">
-        <h1 class="text-5xl text-gray-700 font-bold uppercase">my <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">todo's</span></h1>
-        <div class="w-full h-auto px-5 py-5 mt-14 bg-gray-200 rounded-md">
-            <div class="w-full h-auto">
-                <div class="flex justify-start items-center h-10 bg-gray-200">
-                    <input type="text" id="create_task" class="w-full h-full pl-2 text-sm bg-white text-gray-800 font-normal outline-none border rounded-l-md border-gray-300" placeholder="Write a new task">
-                    <button id="add_task" class="h-full px-2 rounded-r-md bg-gradient-to-r from-green-400 to-blue-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="flex items-center h-10 mt-5 px-2 border border-gray-300 rounded-md bg-white">
-                    <select name="" id="" class="w-full outline-none text-sm text-gray-800 font-normal bg-white">
-                        <option value="#">All</option>
-                        <option value="#">Completed</option>
-                        <option value="#">Uncompleted</option>
-                    </select>
-                </div>
+
+<body class="font-sans">
+    <div class="flex justify-center items-center w-full min-h-screen px-5 py-10">
+        <!-- TASK CONTAINER -->
+        <div id="user_task_container" class="w-full h-auto px-3 py-3 border border-gray-200 rounded-md hidden">
+            <!-- HEADER -->
+            <div class="w-full h-auto flex justify-center items-center">
+                <h1 class="text-4xl font-semibold">
+                    Hi, <span class="text-crimson">Ivan</span>
+                </h1>
             </div>
-            <!-- Content -->
-            <div class="mt-10">
-                <h2 class="text-gray-700 text-xl font-bold tracking-wide capitalize antialiased">all task</h2>
-                <div class="flex flex-col mt-5">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center mr-5">
-                            <p class="text-sm normal-case mr-2 text-gray-700 antialiased">Select all</p>
-                            <input type="checkbox" name="" id="">
-                        </div>
-                        <div class="flex">
-                            <div class="mr-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                            </div>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <ul id="task" class="mt-2">
-                        <li class="flex items-center px-3 py-1 overflow-auto bg-white h-10 rounded-md">
-                            <div class="flex items-center">
-                                <input type="checkbox" name="" id="" class="mr-3">
-                                <p class="overflow-auto text-sm text-gray-700 py-1 mr-2 font-normal antialiased">Big elbow Daeng Sai 4</p>
-                            </div>
-                        </li>
-                        <!-- 
-                        <li class="flex items-center px-3 py-1 mt-3 overflow-auto bg-white h-10 rounded-md">
-                            <div class="flex items-center">
-                                <input type="checkbox" name="" id="" class="mr-3">
-                                <p class="overflow-auto text-sm text-gray-700 py-1 mr-2 font-normal antialiased">Honda XRM Canister</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center px-3 py-1 mt-3 overflow-auto bg-white h-10 rounded-md">
-                            <div class="flex items-center">
-                                <input type="checkbox" name="" id="" class="mr-3">
-                                <p class="overflow-auto text-sm text-gray-700 py-1 mr-2 font-normal antialiased">Formula 8.1 caliper</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center px-3 py-1 mt-3 overflow-auto bg-white h-10 rounded-md">
-                            <div class="flex items-center">
-                                <input type="checkbox" name="" id="" class="mr-3">
-                                <p class="overflow-auto text-sm text-gray-700 py-1 mr-2 font-normal antialiased">Swing arm MTV</p>
-                            </div>
-                        </li> -->
+            <!-- Dropdown menu -->
+            <div class="mt-10 relative">
+                <button id="dropdown_button" class="w-full flex justify-between items-center text-gray-100 bg-crimson font-medium rounded-t-lg text-base px-4 py-2.5">Select 
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="dropdown_list" class="border border-gray-200 rounded-b-lg absolute w-full z-50 bg-white hidden">
+                    <ul id="menu">
+                        <li class="px-2 py-1.5 text-sm capitalize antialiased">task</li>
+                        <li class="px-2 py-1.5 text-sm capitalize antialiased">completed</li>
+                        <li class="px-2 py-1.5 text-sm capitalize antialiased">deleted</li>
                     </ul>
                 </div>
             </div>
+            <!-- CONTENT -->
+            <div id="content" class="w-full h-96 mt-8 border border-gray-200 px-3 py-3 rounded-lg hidden">
+                <div class="flex justify-between items-center">
+                    <h1 id="task_title" class="text-lg antialiased capitalize"></h1>
+                    <p id="number_of_task" class="text-sm antialiased italic"></p>
+                </div>
+                <form action="#" id="user_task_form">
+                    <div id="input_task_container" class="flex mt-5 border border-gray-200 rounded-lg">
+                        <input type="text" name="input_task" id="input_task" placeholder="Create new task" class="w-full h-auto outline-none px-2 py-2 border-none rounded-lg" pattern="[a-zA-Z0-9 '-'\s]*" title="Numbers and special characters are not allowed" placeholder="Please
+                            input your name" autocomplete="off" required>
+                        <button class="px-1.5 py-2 bg-crimson rounded-r-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg " id="input_task_btn " class="h-6 w-6 text-gray-100 " fill="none " viewBox="0 0 24 24 " stroke="currentColor ">
+                                <path stroke-linecap="round " stroke-linejoin="round " stroke-width="2 " d="M12 6v6m0 0v6m0-6h6m-6 0H6 " />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <div id="task_actions" class="flex justify-between items-center mt-7 transition duration-500 opacity-0">
+                    <!-- SELECT ALL TASK -->
+                    <div id="select_all_task_container" class="flex items-center">
+                        <input type="checkbox" name="select_all_task" id="select_all_task" class="mr-2 ">
+                        <p class="text-sm antialiased">Select all</p>
+                    </div>
+                    <!-- ACTIONS -->
+                    <div id="task_actions_btns" class="flex items-center transition duration-500 opacity-0">
+                        <button id="complete_task_btn" class="mr-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        <button id="delete_task_btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                    </div>
+                </div>
+                <!--  TASK CONTENT -->
+                <div class="h-52 overflow-y-auto mt-2 bg-gray-200 rounded-lg px-1 py-1">
+                    <ul id="list_of_task">
+                    </ul>
+                </div>
+
+            </div>
         </div>
-    </section>
+    </div>
+    <!-- FORM FOR THE INPUT NAME OF THE USER -->
+    <div id="user_name_container" class="w-4/5 h-auto absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+        <!-- Header -->
+        <div class="flex justify-center bg-crimson py-2 rounded-t-md">
+            <h1 class="text-xl text-gray-200 font-bold antialiased tracking-wide">TO-DO LIST</h1>
+        </div>
+        <!-- Content -->
+        <form action="#" id="user_name_form">
+            <div class="border border-gray-200 rounded-b-md">
+                <input type="text" name="user_name" id="user_name" class="w-full px-2 py-3 outline-none text-sm rounded-md font-sans" pattern="[a-zA-Z '-'\s]*" title="Numbers and special characters are not allowed" placeholder="Please input your name" autocomplete="off"
+                    required>
+            </div>
+            <!-- Button -->
+            <button id="user_name_btn" class="absolute z-50 left-1/2 transform -translate-x-1/2 -bottom-12 rounded-full outline-none bg-gray-100 border-2 border-crimson w-14 h-14 flex justify-center items-center transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" id="user_name_icon" class="h-9 w-9 text-crimson pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" class="pointer-events-none"/>
+                </svg>
+            </button>
+        </form>
+    </div>
 </body>
+
 </html>
