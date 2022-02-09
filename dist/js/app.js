@@ -1,7 +1,8 @@
 // DOM elements
 const userNameForm = document.querySelector('#user_name_form');
 const userTaskForm = document.querySelector('#user_task_form');
-const userInputName = document.querySelector('#user_name');
+const userInputName = document.querySelector('#user_input_name');
+const userName = document.querySelector('#user_name');
 const userNameIcon = document.querySelector('#user_name_icon');
 const userNameBtn = document.querySelector('#user_name_btn');
 const userNameContainer = document.querySelector('#user_name_container');
@@ -53,16 +54,16 @@ const saveInputTolocalStorage = (input) => {
 
     if (localStorage.getItem('todos') === null) { // If todos is empty
         todos = {}; // Create an array
-        todos.user_name = input.value.trim();
+        todos.user_name = input.value.trim().toLowerCase();
 
     } else {
         todos = JSON.parse(localStorage.getItem('todos'));
 
         if (todos.hasOwnProperty('task')) {
-            todos.task.push(input.value.trim());
+            todos.task.push(input.value.trim().toLowerCase());
         } else {
             todos.task = [];
-            todos.task.push(input.value.trim());
+            todos.task.push(input.value.trim().toLowerCase());
         }
     }
 
@@ -84,6 +85,8 @@ const setUserName = (form, input, inputNameContainer, taskContainer) => {
             inputNameContainer.classList.add('hidden');
             taskContainer.classList.remove('hidden');
         }
+
+        getUserName();
     });
 }
 
@@ -381,6 +384,21 @@ const getNumberOfTask = (objProperyName, numberOfTask) => {
     }
 }
 
+// GET USER NAME
+const getUserName = () => {
+    if (localStorage.getItem('todos') !== null) {
+        const todos = JSON.parse(localStorage.getItem('todos'));
+
+        if (todos.hasOwnProperty('user_name')) {
+            if (todos['user_name'] === 'marielle') {
+                return userName.textContent = 'Mahaaaal';
+            } else {
+                return userName.textContent = todos['user_name'].charAt(0).toUpperCase() + todos['user_name'].slice(1);
+            }
+        }
+    }
+}
+
 // GET TASK
 const getTask = () => {
     taskType(taskTitle, 'Task');
@@ -481,6 +499,8 @@ const viewUserInputName = (userContainer, taskContainer) => {
         if (taskContainer.classList.contains('hidden') && !userContainer.classList.contains('hidden')) {
             taskContainer.classList.remove('hidden');
             userContainer.classList.add('hidden');
+
+            getUserName();
         }
     }
 }
@@ -558,41 +578,6 @@ const checkTask = () => {
             }
         }
     });
-
-
-
-
-    /*
-    for (let i of arrTaskList) {
-        const checkbox = i.children[0];
-
-        checkbox.addEventListener('click', (e) => {
-            if (e.target.checked) {
-                if (taskActionsBtns.classList.contains('opacity-0')) {
-                    taskActionsBtns.classList.remove('opacity-0'); // SHOW ACTION BUTTONS
-                }
-            } else {
-                for (let i of arrTaskList) {
-                    if (i.children[0].checked) {
-                        if (taskActionsBtns.classList.contains('opacity-0')) {
-                            taskActionsBtns.classList.remove('opacity-0'); // SHOW ACTION BUTTONS
-                        }
-                    } else {
-                        if (taskActionsBtns.classList.contains('opacity-0')) {
-                            taskActionsBtns.classList.add('opacity-0'); // HIDE ACTION BUTTONS
-                        }
-                    }
-                }
-
-                if (selectAllCheckbox.checked) {
-                    selectAllCheckbox.checked = false;
-                }
-            }
-
-            completeTask();
-            deleteTask();
-        });
-    } */
 }
 
 // Main  
@@ -604,7 +589,6 @@ const main = () => {
         viewUserInputName(userNameContainer, userTaskContainer);
     });
     selectMenu();
-
 }
 
 main();
