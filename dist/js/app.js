@@ -251,7 +251,7 @@ const createElement = (value) => {
         class: 'whitespace-nowrap overflow-x-auto antialiased'
     });
     // APPEND TEXT CONTENT
-    p.textContent = value;
+    p.textContent = value.charAt(0).toUpperCase() + value.slice(1);
     // APPEND ELEMENT
     li.append(checkbox, p);
     task.appendChild(li);
@@ -449,6 +449,7 @@ const contentToggle = () => {
     if (content.classList.contains('hidden') || !content.classList.contains('hidden') && dropdownList.classList.contains('active')) {
         content.classList.remove('hidden');
         dropdownList.classList.remove('active');
+        dropdownList.classList.toggle('animate-animationToggle');
     }
 }
 
@@ -506,12 +507,13 @@ const viewUserInputName = (userContainer, taskContainer) => {
 }
 
 // Dropdown button for select options
-const dropdownSelectOptions = (button, dropdownList) => {
-    button.addEventListener('click', (e) => {
+const dropdownSelectOptions = () => {
+    dropdownButton.addEventListener('click', (e) => {
         e.preventDefault();
 
-        if (dropdownList.classList.contains('hidden')) {
-            return dropdownList.classList.toggle('active');
+        if (dropdownList.classList.contains('h-0')) {
+            dropdownList.classList.toggle('h-24');
+            menu.classList.toggle('opacity-100');
         }
     });
 }
@@ -584,7 +586,7 @@ const checkTask = () => {
 const main = () => {
     setUserName(userNameForm, userInputName, userNameContainer, userTaskContainer);
     setTask(userTaskForm, inputTask);
-    dropdownSelectOptions(dropdownButton, dropdownList);
+    dropdownSelectOptions();
     document.addEventListener('DOMContentLoaded', () => {
         viewUserInputName(userNameContainer, userTaskContainer);
     });

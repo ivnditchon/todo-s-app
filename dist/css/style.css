@@ -10013,6 +10013,28 @@ video {
   }
 }
 
+@-webkit-keyframes showMenu {
+  0% {
+    top: 0%;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 100;
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    top: 0%;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 100;
+  }
+}
+
 .animate-none {
   -webkit-animation: none;
           animation: none;
@@ -10036,6 +10058,11 @@ video {
 .animate-bounce {
   -webkit-animation: bounce 1s infinite;
           animation: bounce 1s infinite;
+}
+
+.animate-animationShowMenu {
+  -webkit-animation: showMenu 0.5s ease-in forwards;
+          animation: showMenu 0.5s ease-in forwards;
 }
 
 .cursor-auto {
@@ -32429,6 +32456,10 @@ video {
   display: block;
 }
 
+.sMenu {
+  transition: max-height .5s ease;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -41800,6 +41831,11 @@ video {
   .sm\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .sm\:animate-animationShowMenu {
+    -webkit-animation: showMenu 0.5s ease-in forwards;
+            animation: showMenu 0.5s ease-in forwards;
   }
 
   .sm\:cursor-auto {
@@ -73206,6 +73242,11 @@ video {
             animation: bounce 1s infinite;
   }
 
+  .md\:animate-animationShowMenu {
+    -webkit-animation: showMenu 0.5s ease-in forwards;
+            animation: showMenu 0.5s ease-in forwards;
+  }
+
   .md\:cursor-auto {
     cursor: auto;
   }
@@ -104608,6 +104649,11 @@ video {
   .lg\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .lg\:animate-animationShowMenu {
+    -webkit-animation: showMenu 0.5s ease-in forwards;
+            animation: showMenu 0.5s ease-in forwards;
   }
 
   .lg\:cursor-auto {
@@ -136014,6 +136060,11 @@ video {
             animation: bounce 1s infinite;
   }
 
+  .xl\:animate-animationShowMenu {
+    -webkit-animation: showMenu 0.5s ease-in forwards;
+            animation: showMenu 0.5s ease-in forwards;
+  }
+
   .xl\:cursor-auto {
     cursor: auto;
   }
@@ -167416,6 +167467,11 @@ video {
   .\32xl\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .\32xl\:animate-animationShowMenu {
+    -webkit-animation: showMenu 0.5s ease-in forwards;
+            animation: showMenu 0.5s ease-in forwards;
   }
 
   .\32xl\:cursor-auto {

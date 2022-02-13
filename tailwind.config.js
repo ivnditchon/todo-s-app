@@ -5,6 +5,12 @@ module.exports = {
         extend: {
             colors: {
                 'crimson': '#DC143C'
+            },
+            animation: {
+                animationShowMenu: 'showMenu 0.5s ease-in forwards',
+            },
+            transitionProperty: {
+                height: 'height'
             }
         },
     },

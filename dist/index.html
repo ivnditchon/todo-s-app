@@ -36,16 +36,16 @@
             </div>
             <!-- Dropdown menu -->
             <div class="mt-10 relative">
-                <button id="dropdown_button" class="w-full flex justify-between items-center text-gray-100 bg-crimson font-medium rounded-t-lg text-base px-4 py-2.5">Select 
+                <button id="dropdown_button" class="w-full flex justify-between items-center text-gray-100 bg-crimson font-medium rounded-t-lg text-base px-4 py-2.5 relative z-50">Select 
                     <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <div id="dropdown_list" class="border border-gray-200 rounded-b-lg absolute w-full z-50 bg-white hidden">
-                    <ul id="menu">
-                        <li class="px-2 py-1.5 text-sm capitalize antialiased">task</li>
-                        <li class="px-2 py-1.5 text-sm capitalize antialiased">completed</li>
-                        <li class="px-2 py-1.5 text-sm capitalize antialiased">deleted</li>
+                <div id="dropdown_list" class="border border-gray-200 rounded-b-lg absolute w-full h-0 overflow-hidden z-10 bg-white transition-height duration-500 ease-in-out flex items-center">
+                    <ul id="menu" class="flex flex-col px-2.5 opacity-0 duration-700">
+                        <li class="text-sm capitalize antialiased">task</li>
+                        <li class="py-1.5 text-sm capitalize antialiased">completed</li>
+                        <li class="text-sm capitalize antialiased">deleted</li>
                     </ul>
                 </div>
             </div>
@@ -56,8 +56,8 @@
                     <p id="number_of_task" class="text-sm antialiased italic"></p>
                 </div>
                 <form action="#" id="user_task_form">
-                    <div id="input_task_container" class="flex mt-5 border border-gray-200 rounded-lg">
-                        <input type="text" name="input_task" id="input_task" placeholder="Create new task" class="w-full h-auto outline-none px-2 py-2 border-none rounded-lg" pattern="[a-zA-Z0-9 '-'\s]*" title="Numbers and special characters are not allowed" placeholder="Please
+                    <div id="input_task_container" class="flex mt-5">
+                        <input type="text" name="input_task" id="input_task" placeholder="Create new task" class="w-full h-auto outline-none px-2 py-2 border border-gray-200 rounded-l-lg" pattern="[a-zA-Z0-9 '-'\s]*" title="Numbers and special characters are not allowed" placeholder="Please
                             input your name" autocomplete="off" required>
                         <button class="px-1.5 py-2 bg-crimson rounded-r-lg">
                             <svg xmlns="http://www.w3.org/2000/svg " id="input_task_btn " class="h-6 w-6 text-gray-100 " fill="none " viewBox="0 0 24 24 " stroke="currentColor ">
