@@ -7,6 +7,7 @@ const userNameIcon = document.querySelector('#user_name_icon');
 const userNameBtn = document.querySelector('#user_name_btn');
 const userNameContainer = document.querySelector('#user_name_container');
 const dropdownButton = document.querySelector('#dropdown_button');
+const dropdownIcon = document.querySelector('#dropdown_icon');
 const dropdownList = document.querySelector('#dropdown_list');
 const userTaskContainer = document.querySelector('#user_task_container');
 const task = document.querySelector('#list_of_task');
@@ -511,10 +512,16 @@ const dropdownSelectOptions = () => {
     dropdownButton.addEventListener('click', (e) => {
         e.preventDefault();
 
+        ['transform', 'rotate-180'].map((cls) => {
+            dropdownIcon.classList.toggle(cls);
+        });
+
         if (dropdownList.classList.contains('h-0')) {
-            dropdownList.classList.toggle('h-24');
+            dropdownList.classList.toggle('h-20');
             menu.classList.toggle('opacity-100');
         }
+
+
     });
 }
 
